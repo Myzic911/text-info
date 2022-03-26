@@ -8,6 +8,8 @@ var letter_char = 0;
 var space_char = 0;
 var number_char = 0;
 var special_char = 0;
+var word = 0;
+var word_counter = text.join('').split(' ');
 
 for (var i = 0; i < text.length; i++) {
   for (var j = 0; j < letter.length; j++) {
@@ -35,4 +37,4 @@ for (var i = 0; i < text.length; i++) {
   }
 }
 
-document.write('Your text contain ' + total_char + ' total character, ' + letter_char + ' letter, ' + number_char + ' number, ' + special_char + ' special character and ' + space_char + ' space.');
+document.write('Your text contain ' + word_counter.length + ' word, ' + total_char + ' total character, ' + letter_char + ' letter, ' + number_char + ' number, ' + special_char + ' special character and ' + space_char + ' space.');
