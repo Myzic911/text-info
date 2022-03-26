@@ -1,11 +1,13 @@
-var letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var letter = ['a', 'à', 'â', 'ä', 'b', 'c', 'ç', 'd', 'e', 'é', 'è', 'ê', 'ë', 'f', 'g', 'h', 'i', 'î', 'ï', 'j', 'k', 'l', 'm', 'n', 'o', 'ô', 'ö', 'p', 'q', 'r', 's', 't', 'u', 'û', 'ù', 'ü', 'v', 'w', 'x', 'y', 'ŷ', 'ÿ', 'z', 'A', 'À', 'Â', 'Ä', 'B', 'C', 'Ç', 'D', 'E', 'É', 'È', 'Ê', 'Ë', 'F', 'G', 'H', 'I', 'Î', 'Ï', 'J', 'K', 'L', 'M', 'N', 'O', 'Ô', 'Ö', 'P', 'Q', 'R', 'S', 'T', 'U', 'Ù', 'Û', 'Ü', 'V', 'W', 'X', 'Y', 'Z'];
 var space = [' '];
 var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var special = ['&', '~', '"', '#', '\'', '{', '(', '[', '-', '|', '`', '_', '\\', '^', '@', ')', ']', '°', '=', '}', '+', '¨', '$', '£', '¤', '*', 'µ', '%', '?', ',', ';', '.', '/', ':', '!', '§'];
 var text = prompt('Enter the text you want to extract informations.').split('');
 var total_char = text.length;
 var letter_char = 0;
 var space_char = 0;
 var number_char = 0;
+var special_char = 0;
 
 for (var i = 0; i < text.length; i++) {
   for (var j = 0; j < letter.length; j++) {
@@ -25,6 +27,12 @@ for (var i = 0; i < text.length; i++) {
       number_char++;
     }
   }
+
+  for (var j = 0; j < special.length; j++) {
+    if (text[i] === special[j]) {
+      special_char++;
+    }
+  }
 }
 
-document.write('Your text contain ' + total_char + ' total char, ' + letter_char + ' letter, ' + number_char + ' number and ' + space_char + ' space.');
+document.write('Your text contain ' + total_char + ' total character, ' + letter_char + ' letter, ' + number_char + ' number, ' + special_char + ' special character and ' + space_char + ' space.');
